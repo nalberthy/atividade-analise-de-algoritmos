@@ -35,26 +35,48 @@ def analizador(arquivo):
     if status == False:
         p=-1
 
-
-
-    print(p)
-    print(status)
     arq.close()
 
-    return str(p)+"\n"+str(status)
+    return str(status)+"\n"+str(p)
 
 
 
-
-ini = time.time()
-dados = analizador('dataset-1-c.csv')
-fim = time.time()
-r = fim-ini
-
-
-arq = open('saida.txt', 'w')
-
-arq.write(dados+"\n"+str(r))
-arq.close()
+def dataset_a():
+    ini = time.time()
+    dados = analizador('dataset-1-a.csv')
+    fim = time.time()
+    r = fim-ini
 
 
+    arq = open('resposta-dataset-1-a.txt', 'w')
+
+    arq.write(dados+"\n"+str(r))
+    arq.close()
+
+def dataset_b():
+    ini = time.time()
+    dados = analizador('dataset-1-b.csv')
+    fim = time.time()
+    r = fim-ini
+
+
+    arq = open('resposta-dataset-1-b.txt', 'w')
+
+    arq.write(dados+"\n"+str(r))
+    arq.close()
+
+def dataset_c():
+    ini = time.time()
+    dados = analizador('dataset-1-c.csv')
+    fim = time.time()
+    r = fim-ini
+
+
+    arq = open('resposta-dataset-1-c.txt', 'w')
+
+    arq.write(dados+"\n"+str(r))
+    arq.close()
+
+dataset_a()
+dataset_b()
+dataset_c()
